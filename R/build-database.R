@@ -143,7 +143,8 @@ build_database <- function(override = FALSE) {
 #' @export
 get_database_file <- function() {
   file_name <- sprintf('zotero2r-data-%i.rds', get_zotero_id())
-  data_dir <- file.path(find.package('zotero2r'), 'data')
+  #data_dir <- file.path(find.package('zotero2r'), 'data')
+  data_dir <- file.path(Sys.getenv('HOME'), 'zotero2r_data')
   file.path(data_dir, file_name)
 }
 

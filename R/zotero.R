@@ -149,5 +149,3 @@ pull_single_collection <- function(collection_code, group = NA) {
   if (length(my_content) == 100L) {}
 
 }
-
-
