@@ -110,7 +110,7 @@ retrieve_single_record_from_zotero <- function(key) {
 #' @return Data.frame of BibLatex records
 #' @importFrom purrr map_df
 pull_new_items_from_zotero <- function(key_list) {
-  purrr::map_df(key_list[1:10],
+  purrr::map_df(key_list,
                 retrieve_single_record_from_zotero)
 
 }
