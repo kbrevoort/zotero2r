@@ -191,10 +191,10 @@ update_zotero_database <- function() {
     db_file <- get_database_file()
 
     dplyr::bind_rows(my_db, new_dt) %>%
-      arrange(-version) %>%
-      group_by(key) %>%
-      slice(1) %>%
-      ungroup() %>%
+      dplyr::arrange(desc(version)) %>%
+      dplyr::group_by(key) %>%
+      dplyr::slice(1) %>%
+      dplyr::ungroup() %>%
       saveRDS(db_file)
   } else {
     warning('No new items found.  Zotero2r database already up to date.',
